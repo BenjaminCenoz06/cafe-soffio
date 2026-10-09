@@ -95,32 +95,24 @@ document.documentElement.classList.add("js");
   });
 })();
 
-// Footer: al hacer click en el sticker caen medialunas con gravedad y rebotan
-(() => {
-  const btn = document.getElementById("dropBtn");
-  const layer = document.getElementById("dropLayer");
-  if (!btn || !layer) return;
-
-  const R = matchMedia("(max-width: 900px)").matches ? 36 : 46;
-  const MAX = matchMedia("(max-width: 900px)").matches ? 30 : 60;
+// Alfajores que caen con gravedad (footer y header)
+function createDropper(layer, { floorOffset = 64, max = 60, size = 46, ttl = 0 } = {}) {
   const GRAVITY = 0.7;
   const bodies = [];
   let raf = null;
-
-  const pic = (src, w) => `<img src="${src}" alt="" style="position:absolute;left:50%;top:50%;width:${w}%;height:auto;transform:translate(-50%,-50%)">`;
-  const croissant = pic("img/pieza-croissant.webp", 135);
-  const bagel = pic("img/pieza-alfajor.webp", 92);
+  const R = size;
+  const html = '<img src="img/pieza-alfajor.webp" alt="" style="position:absolute;left:50%;top:50%;width:92%;height:auto;transform:translate(-50%,-50%)">';
 
   const spawn = () => {
     const box = layer.getBoundingClientRect();
     const el = document.createElement("div");
     el.className = "dropped";
-    el.innerHTML = bagel;
+    el.innerHTML = html;
     el.style.width = el.style.height = R * 2 + "px";
-        layer.appendChild(el);
+    layer.appendChild(el);
     const b = {
       el, r: R,
-      x: box.width * (0.2 + Math.random() * 0.6),
+      x: box.width * (0.15 + Math.random() * 0.7),
       y: -R - Math.random() * 60,
       vx: (Math.random() - 0.5) * 6,
       vy: 2,
@@ -128,13 +120,17 @@ document.documentElement.classList.add("js");
       va: (Math.random() - 0.5) * 8,
     };
     bodies.push(b);
-    if (bodies.length > MAX) layer.removeChild(bodies.shift().el);
+    if (bodies.length > max) layer.removeChild(bodies.shift().el);
+    if (ttl) {
+      setTimeout(() => el.classList.add("is-fading"), ttl);
+      setTimeout(() => { const i = bodies.indexOf(b); if (i > -1) bodies.splice(i, 1); el.remove(); }, ttl + 800);
+    }
     if (!raf) raf = requestAnimationFrame(step);
   };
 
   const step = () => {
     const w = layer.clientWidth;
-    const floor = layer.clientHeight - 64;
+    const floor = layer.clientHeight - floorOffset;
 
     bodies.forEach((b) => {
       b.vy += GRAVITY;
@@ -184,20 +180,40 @@ document.documentElement.classList.add("js");
     raf = moving ? requestAnimationFrame(step) : null;
   };
 
-  // al llegar al footer, empieza a llover alfajores
+  return { spawn };
+}
+
+// Footer: lluvia de alfajores al llegar y al hacer click en el sticker
+(() => {
+  const btn = document.getElementById("dropBtn");
+  const layer = document.getElementById("dropLayer");
+  if (!btn || !layer) return;
+  const mobile = matchMedia("(max-width: 900px)").matches;
+  const { spawn } = createDropper(layer, { floorOffset: 64, max: mobile ? 30 : 60, size: mobile ? 36 : 46 });
+
   const footerEl = btn.closest(".footer");
   if (footerEl) {
     new IntersectionObserver(([e], o) => {
       if (!e.isIntersecting) return;
       o.disconnect();
-      const n = matchMedia("(max-width: 900px)").matches ? 12 : 18;
+      const n = mobile ? 12 : 18;
       for (let i = 0; i < n; i++) setTimeout(spawn, 300 + i * 130);
     }, { threshold: 0.3 }).observe(footerEl);
   }
+  btn.addEventListener("click", () => { for (let i = 0; i < 8; i++) setTimeout(spawn, i * 90); });
+})();
 
-  btn.addEventListener("click", () => {
-    for (let i = 0; i < 8; i++) setTimeout(spawn, i * 90);
-  });
+// Header: "Soltá un alfajor. O 20" — letras que entran una a una y alfajores que caen al hacer click
+(() => {
+  const btn = document.getElementById("heroDrop");
+  const layer = document.getElementById("heroDropLayer");
+  if (!btn || !layer) return;
+  const text = btn.querySelector(".drop-link__text");
+  text.innerHTML = [...text.textContent].map((c, i) => '<span class="ch" style="--i:' + i + '">' + (c === " " ? "&nbsp;" : c) + "</span>").join("");
+
+  const mobile = matchMedia("(max-width: 900px)").matches;
+  const { spawn } = createDropper(layer, { floorOffset: mobile ? 84 : 60, max: 26, size: mobile ? 30 : 38, ttl: 6500 });
+  btn.addEventListener("click", () => { for (let i = 0; i < (mobile ? 10 : 14); i++) setTimeout(spawn, i * 85); });
 })();
 
 /* =====================================================

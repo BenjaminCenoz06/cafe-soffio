@@ -1359,3 +1359,67 @@ body.menu-open { overflow: hidden; }
   .footer__pile { left: 50%; right: auto; bottom: 96px; width: 66%; opacity: 1; transform: translateX(-50%); }
   .footer__bottom { position: relative; z-index: 4; }
 }
+
+/* ---------- "Soltá un alfajor" (esquina inferior del header) ---------- */
+.hero__drop { position: absolute; inset: 0; z-index: 4; overflow: hidden; pointer-events: none; }
+.hero__drop .dropped { transition: opacity .7s ease; }
+.hero__drop .dropped.is-fading { opacity: 0; }
+
+.drop-link {
+  position: absolute;
+  left: 24px;
+  bottom: 46px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #f6efe0;
+  font: 700 11px var(--font-mono);
+  letter-spacing: .02em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.drop-link__text { position: relative; display: inline-block; padding-bottom: 5px; border: 0; }
+.drop-link__text .ch { display: inline-block; opacity: 0; transform: translateY(8px); animation: ch-in .5s cubic-bezier(.2, .8, .2, 1) forwards; animation-delay: calc(1.3s + var(--i) * .035s); }
+.drop-link__text::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #f6efe0, #9aa878);
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: underline-in .9s cubic-bezier(.7, 0, .2, 1) 1.9s forwards;
+}
+.drop-link:hover .drop-link__text::after { animation: underline-pulse 1s ease; transform: scaleX(1); }
+@keyframes ch-in { to { opacity: 1; transform: none; } }
+@keyframes underline-in { to { transform: scaleX(1); } }
+@keyframes underline-pulse { 0% { transform-origin: right; transform: scaleX(1); } 45% { transform-origin: right; transform: scaleX(0); } 55% { transform-origin: left; transform: scaleX(0); } 100% { transform-origin: left; transform: scaleX(1); } }
+
+.drop-link__swirl { margin-top: -9px; overflow: visible; }
+.swirl__line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: swirl-draw 1.4s cubic-bezier(.6, 0, .3, 1) 2.2s forwards, swirl-loop 6s ease-in-out 5s infinite; }
+.swirl__spark { opacity: 0; animation: spark 1.2s ease 3.4s forwards; }
+@keyframes swirl-draw { to { stroke-dashoffset: 0; } }
+@keyframes swirl-loop { 0%, 82%, 100% { stroke-dashoffset: 0; } 90% { stroke-dashoffset: 1; } 98% { stroke-dashoffset: 0; } }
+@keyframes spark { 0% { opacity: 0; } 40% { opacity: 1; } 100% { opacity: .9; } }
+.drop-link:hover .drop-link__swirl { animation: swirl-wiggle .7s ease; }
+.drop-link:active { transform: scale(.96); }
+@keyframes swirl-wiggle { 25% { transform: rotate(-8deg) translateY(-2px); } 60% { transform: rotate(6deg); } }
+
+.js .drop-link { opacity: 1; animation: none; }
+
+@media (max-width: 900px) {
+  .drop-link { left: var(--gutter); bottom: max(34px, calc(env(safe-area-inset-bottom) + 28px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .drop-link__text .ch { opacity: 1; transform: none; animation: none; }
+  .drop-link__text::after { transform: scaleX(1); animation: none; }
+  .swirl__line { stroke-dashoffset: 0; animation: none; }
+  .swirl__spark { opacity: 1; animation: none; }
+}
+.drop-link .drop-link__text { padding-bottom: 5px; border: 0; }
+.drop-link .ch { padding: 0; border: 0; }
+.drop-link svg { align-self: flex-start; }
