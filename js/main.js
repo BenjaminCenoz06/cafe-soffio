@@ -95,13 +95,13 @@ document.documentElement.classList.add("js");
   });
 })();
 
-// Alfajores que caen con gravedad (footer y header)
-function createDropper(layer, { floorOffset = 64, max = 60, size = 46, ttl = 0 } = {}) {
+// Piezas que caen con gravedad (alfajores en el header, croissants en el footer)
+function createDropper(layer, { floorOffset = 64, max = 60, size = 46, ttl = 0, src = "img/pieza-alfajor.webp", imgW = 92 } = {}) {
   const GRAVITY = 0.7;
   const bodies = [];
   let raf = null;
   const R = size;
-  const html = '<img src="img/pieza-alfajor.webp" alt="" style="position:absolute;left:50%;top:50%;width:92%;height:auto;transform:translate(-50%,-50%)">';
+  const html = `<img src="${src}" alt="" style="position:absolute;left:50%;top:50%;width:${imgW}%;height:auto;transform:translate(-50%,-50%)">`;
 
   const spawn = () => {
     const box = layer.getBoundingClientRect();
@@ -183,13 +183,13 @@ function createDropper(layer, { floorOffset = 64, max = 60, size = 46, ttl = 0 }
   return { spawn };
 }
 
-// Footer: lluvia de alfajores al llegar y al hacer click en el sticker
+// Footer: lluvia de croissants al llegar y al hacer click en el sticker
 (() => {
   const btn = document.getElementById("dropBtn");
   const layer = document.getElementById("dropLayer");
   if (!btn || !layer) return;
   const mobile = matchMedia("(max-width: 900px)").matches;
-  const { spawn } = createDropper(layer, { floorOffset: 64, max: mobile ? 30 : 60, size: mobile ? 36 : 46 });
+  const { spawn } = createDropper(layer, { floorOffset: 64, max: mobile ? 30 : 60, size: mobile ? 36 : 46, src: "img/pieza-croissant.webp", imgW: 150 });
 
   const footerEl = btn.closest(".footer");
   if (footerEl) {
@@ -214,6 +214,19 @@ function createDropper(layer, { floorOffset = 64, max = 60, size = 46, ttl = 0 }
   const mobile = matchMedia("(max-width: 900px)").matches;
   const { spawn } = createDropper(layer, { floorOffset: mobile ? 84 : 60, max: 26, size: mobile ? 30 : 38, ttl: 6500 });
   btn.addEventListener("click", () => { for (let i = 0; i < (mobile ? 10 : 14); i++) setTimeout(spawn, i * 85); });
+
+  // al hacer scroll hacia abajo sobre el header, caen alfajores
+  const hero = btn.closest(".hero");
+  if (hero) {
+    let lastY = scrollY, acc = 0;
+    addEventListener("scroll", () => {
+      const y = scrollY, dy = y - lastY;
+      lastY = y;
+      if (dy <= 0 || y > hero.offsetHeight * 0.9) { if (dy < 0) acc = 0; return; }
+      acc += dy;
+      while (acc >= 60) { acc -= 60; spawn(); }
+    }, { passive: true });
+  }
 })();
 
 /* =====================================================
