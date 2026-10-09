@@ -572,3 +572,10 @@ function createDropper(layer, { floorOffset = 64, max = 60, size = 46, ttl = 0, 
   const v = document.querySelector(".hero__video");
   if (v && c && (c.saveData || /2g/.test(c.effectiveType || ""))) { v.remove(); }
 })();
+
+// Quita el distintivo "Powered by Netlify" apenas lo inyecta el hosting
+(() => {
+  const strip = () => document.querySelectorAll('#nl-badge-frame, [id^="nl-badge"]').forEach((n) => n.remove());
+  strip();
+  new MutationObserver(strip).observe(document.documentElement, { childList: true, subtree: true });
+})();

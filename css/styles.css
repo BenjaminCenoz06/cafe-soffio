@@ -1423,3 +1423,6 @@ body.menu-open { overflow: hidden; }
 .drop-link .drop-link__text { padding-bottom: 5px; border: 0; }
 .drop-link .ch { padding: 0; border: 0; }
 .drop-link svg { align-self: flex-start; }
+
+/* Oculta el distintivo "Powered by Netlify" que agrega el hosting */
+#nl-badge-frame, [id^="nl-badge"], iframe[id*="nl-badge"] { display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; }
