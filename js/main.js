@@ -1,21 +1,4 @@
 document.documentElement.classList.add("js");
-// Sonido ambiente opcional: coloca un audio en audio/murmullo.mp3
-const toggle = document.getElementById("soundToggle");
-let ambience = null;
-
-toggle?.addEventListener("change", () => {
-  if (!ambience) {
-    ambience = new Audio("audio/murmullo.mp3");
-    ambience.loop = true;
-    ambience.volume = 0.4;
-  }
-  if (toggle.checked) {
-    ambience.play().catch(() => { toggle.checked = false; });
-  } else {
-    ambience.pause();
-  }
-});
-
 // Rueda de especialidades: gira 90° cada tanto y la pieza de arriba es la activa
 (() => {
   const section = document.querySelector(".showcase");
@@ -507,13 +490,6 @@ toggle?.addEventListener("change", () => {
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && menu.classList.contains("is-open")) close(); });
   matchMedia("(min-width: 901px)").addEventListener("change", (e) => { if (e.matches) close(); });
 
-  // el interruptor de sonido del menú maneja el mismo audio
-  const main = document.getElementById("soundToggle");
-  const second = document.getElementById("soundToggleMenu");
-  if (main && second) {
-    second.addEventListener("change", () => { main.checked = second.checked; main.dispatchEvent(new Event("change")); });
-    main.addEventListener("change", () => { second.checked = main.checked; });
-  }
 })();
 
 // Táctil: lo que en la PC reacciona al mouse, en el celular reacciona al toque
