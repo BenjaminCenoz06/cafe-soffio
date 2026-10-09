@@ -96,7 +96,7 @@ document.documentElement.classList.add("js");
 })();
 
 // Piezas que caen con gravedad (alfajores en el header, croissants en el footer)
-function createDropper(layer, { floorOffset = 64, max = 60, size = 46, ttl = 0, src = "img/pieza-alfajor.webp", imgW = 92 } = {}) {
+function createDropper(layer, { floorOffset = 64, max = 60, size = 46, ttl = 0, src = "img/pieza-cafe.webp", imgW = 92 } = {}) {
   const GRAVITY = 0.7;
   const bodies = [];
   let raf = null;
@@ -203,7 +203,7 @@ function createDropper(layer, { floorOffset = 64, max = 60, size = 46, ttl = 0, 
   btn.addEventListener("click", () => { for (let i = 0; i < 8; i++) setTimeout(spawn, i * 90); });
 })();
 
-// Header: "Soltá un alfajor. O 20" — letras que entran una a una y alfajores que caen al hacer click
+// Header: "Soltá un cafecito. O 20" — letras que entran una a una y cafecitos que caen al hacer click
 (() => {
   const btn = document.getElementById("heroDrop");
   const layer = document.getElementById("heroDropLayer");
@@ -215,7 +215,7 @@ function createDropper(layer, { floorOffset = 64, max = 60, size = 46, ttl = 0, 
   const { spawn } = createDropper(layer, { floorOffset: mobile ? 84 : 60, max: 26, size: mobile ? 30 : 38, ttl: 6500 });
   btn.addEventListener("click", () => { for (let i = 0; i < (mobile ? 10 : 14); i++) setTimeout(spawn, i * 85); });
 
-  // al hacer scroll hacia abajo sobre el header, caen alfajores
+  // al hacer scroll hacia abajo sobre el header, caen cafecitos
   const hero = btn.closest(".hero");
   if (hero) {
     let lastY = scrollY, acc = 0;
@@ -464,15 +464,15 @@ function createDropper(layer, { floorOffset = 64, max = 60, size = 46, ttl = 0, 
   });
 })();
 
-// Video del header: se reproduce solo mientras se ve
+// Videos del header: se reproducen solo mientras se ven
 (() => {
-  const v = document.querySelector(".hero__video");
-  if (!v) return;
-  v.muted = true;
-  const play = () => v.play().catch(() => {});
+  const vs = [...document.querySelectorAll(".hero__video, .hero__reel video")];
+  if (!vs.length) return;
+  const play = () => vs.forEach((v) => { v.muted = true; v.play().catch(() => {}); });
+  const pause = () => vs.forEach((v) => v.pause());
   play();
-  new IntersectionObserver(([e]) => (e.isIntersecting ? play() : v.pause()), { threshold: 0.05 }).observe(v);
-  document.addEventListener("visibilitychange", () => (document.hidden ? v.pause() : play()));
+  new IntersectionObserver(([e]) => (e.isIntersecting ? play() : pause()), { threshold: 0.05 }).observe(document.querySelector(".hero"));
+  document.addEventListener("visibilitychange", () => (document.hidden ? pause() : play()));
 })();
 
 // Reseñas: se duplica el contenido de cada columna para que el desplazamiento sea infinito
@@ -578,4 +578,77 @@ function createDropper(layer, { floorOffset = 64, max = 60, size = 46, ttl = 0, 
   const strip = () => document.querySelectorAll('#nl-badge-frame, [id^="nl-badge"]').forEach((n) => n.remove());
   strip();
   new MutationObserver(strip).observe(document.documentElement, { childList: true, subtree: true });
+})();
+
+/* =====================================================
+   SOFFIO — barra de progreso, números, botones magnéticos y reel con parallax
+   ===================================================== */
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // barra de progreso de lectura
+  const bar = document.getElementById("progress");
+  if (bar) {
+    const upd = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.setProperty("--p", max > 0 ? Math.min(1, scrollY / max).toFixed(4) : 0);
+    };
+    addEventListener("scroll", upd, { passive: true });
+    addEventListener("resize", upd);
+    upd();
+  }
+
+  // números que cuentan al llegar
+  const stats = document.querySelector(".stats");
+  if (stats) {
+    const nums = [...stats.querySelectorAll("[data-count]")];
+    const run = () => {
+      stats.classList.add("is-in");
+      nums.forEach((el) => {
+        const end = +el.dataset.count, suf = el.dataset.suffix || "";
+        if (reduce) { el.textContent = end + suf; return; }
+        const t0 = performance.now(), dur = 1800;
+        const tick = (t) => {
+          const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 4);
+          el.textContent = Math.round(end * e) + suf;
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    };
+    new IntersectionObserver(([e], o) => { if (e.isIntersecting) { run(); o.disconnect(); } }, { threshold: 0.35 }).observe(stats);
+  }
+
+  if (reduce || matchMedia("(pointer: coarse)").matches) return;
+
+  // botones magnéticos
+  document.querySelectorAll(".btn-order, .btn-solid, .btn-ghost, .reviews__link").forEach((b) => {
+    b.addEventListener("pointermove", (e) => {
+      const r = b.getBoundingClientRect();
+      const x = (e.clientX - (r.left + r.width / 2)) * 0.22, y = (e.clientY - (r.top + r.height / 2)) * 0.3;
+      b.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px)";
+    });
+    b.addEventListener("pointerleave", () => { b.style.transform = ""; });
+  });
+
+  // el reel del header sigue al cursor
+  const hero = document.querySelector(".hero"), reel = document.querySelector(".hero__reel");
+  if (hero && reel) {
+    hero.addEventListener("pointermove", (e) => {
+      const r = hero.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      reel.style.setProperty("--ry", (-8 + x * 14).toFixed(1) + "deg");
+      reel.style.setProperty("--rx", (-y * 10).toFixed(1) + "deg");
+    });
+    hero.addEventListener("pointerleave", () => { reel.style.setProperty("--ry", "-8deg"); reel.style.setProperty("--rx", "0deg"); });
+  }
+
+  // parallax suave del video de fondo
+  const bg = document.querySelector(".hero__video");
+  if (hero && bg) {
+    addEventListener("scroll", () => {
+      const y = Math.min(scrollY, hero.offsetHeight);
+      bg.style.translate = "0 " + (y * 0.18).toFixed(1) + "px";
+    }, { passive: true });
+  }
 })();

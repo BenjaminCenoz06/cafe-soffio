@@ -3,24 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pauza Café — Café de especialidad &amp; Vermut bar en Córdoba</title>
-  <meta name="description" content="Pauza: café de especialidad y vermut bar en Nueva Córdoba y Centro, Córdoba. Desayuno, brunch, almuerzo, pastelería y vermut. Chacabuco 682, Av. Estrada 175 y Caseros 79.">
+  <title>Soffio Café — Café de especialidad en Posadas, Misiones</title>
+  <meta name="description" content="Soffio: café de especialidad en Posadas, Misiones. El mejor café de @cuervocafe, cositas ricas dulces y saladas, opciones sin gluten y sin TACC. Fleming 1363.">
   <meta name="theme-color" content="#4f5b3a">
+  <meta property="og:title" content="Soffio Café — Café de especialidad en Posadas">
+  <meta property="og:description" content="El mejor café de @cuervocafe y cositas ricas dulces y saladas. Fleming 1363, Posadas, Misiones.">
+  <meta property="og:image" content="img/hero.jpg">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Kaushan+Script&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="logo.jpg">
+  <link rel="icon" href="img/footer.jpg" type="image/jpeg">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
   <header class="hero" id="inicio">
-    <!-- Fondo: coloca tu foto en img/hero.jpg (o cambia por un <video>) -->
     <div class="hero__bg" aria-hidden="true"></div>
     <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="img/video/hero-poster.jpg" aria-hidden="true" tabindex="-1">
       <source src="img/video/hero.mp4" type="video/mp4">
     </video>
     <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__grain" aria-hidden="true"></div>
 
     <!-- Barra superior -->
     <div class="topbar">
@@ -28,40 +33,55 @@
         <svg class="icon-crown" viewBox="0 0 28 18" width="26" height="17" aria-hidden="true">
           <path fill="currentColor" d="M1 4l6 5 7-8 7 8 6-5-2 12H3L1 4zm2.5 13h21v1.5h-21z"/>
         </svg>
-        Abierto de 8 a 21:30
+        Fleming 1363
       </p>
 
-      <a href="#inicio" class="logo" aria-label="Café Pauza — inicio">
+      <a href="#inicio" class="logo" aria-label="Soffio Café — inicio">
         <span class="logo__line"></span>
-        <img class="logo__img" src="img/logo-light.png" alt="Café Pauza — Café de especialidad &amp; Vermut bar" width="96" height="96">
+        <img class="logo__img" src="img/logo-light.png" alt="Soffio Café" width="1000" height="483">
         <span class="logo__line"></span>
       </a>
 
-      <p class="topbar__item topbar__tagline">Nueva Córdoba · Córdoba, Argentina</p>
+      <p class="topbar__item topbar__tagline">Posadas · Misiones, Argentina</p>
     </div>
 
     <!-- Titular -->
     <div class="hero__content">
-      <h1 class="hero__title">
-        <span>Café.</span>
-        <span>Brunch.</span>
-        <span>Vermut.</span>
-      </h1>
-      <p class="hero__tag">Nueva Córdoba · Córdoba, Argentina</p>
+      <div class="hero__copy">
+        <p class="hero__eyebrow">Café de especialidad</p>
+        <h1 class="hero__title">
+          <span>Café.</span>
+          <span>Cositas ricas.</span>
+          <span>Posadas.</span>
+        </h1>
+        <p class="hero__tag">Posadas · Misiones, Argentina</p>
+        <p class="hero__lead">El mejor café de @cuervocafe, cositas ricas dulces y saladas, y opciones sin gluten y sin TACC.</p>
 
-      <a href="#carta" class="btn-order" data-open-menu>
-        Ver carta
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" d="M6 18L18 6M8 6h10v10"/>
-        </svg>
-      </a>
+        <div class="hero__actions">
+          <a href="#carta" class="btn-order" data-open-menu>
+            Ver carta
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" d="M6 18L18 6M8 6h10v10"/>
+            </svg>
+          </a>
+          <a href="https://www.pedidosya.com.ar/restaurantes/posadas/soffio-cafe-de-especialidad-7fbb74c4-f784-4698-a266-e608e0323f3a-menu" class="btn-ghost" target="_blank" rel="noopener">Pedir ahora</a>
+        </div>
+      </div>
+
+      <figure class="hero__reel" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="auto" poster="img/video/hero-poster.jpg" tabindex="-1">
+          <source src="img/video/hero.mp4" type="video/mp4">
+        </video>
+        <span class="hero__reel-tag">@soffiocafe</span>
+      </figure>
     </div>
 
+    <a class="hero__scroll" href="#especialidades" aria-label="Bajar"><span></span></a>
 
     <!-- Esquina inferior izquierda -->
     <div class="hero__drop" id="heroDropLayer" aria-hidden="true"></div>
-    <button class="drop-link" id="heroDrop" type="button" aria-label="Soltar alfajores">
-      <span class="drop-link__text">Soltá un alfajor. O 20</span>
+    <button class="drop-link" id="heroDrop" type="button" aria-label="Soltar cafecitos">
+      <span class="drop-link__text">Soltá un cafecito. O 20</span>
       <svg class="drop-link__swirl" viewBox="0 0 60 34" width="46" height="26" aria-hidden="true">
         <path class="swirl__line" pathLength="1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 24c8-7 15-7 21-2 5 4 8-3 11-9 3-6 9-9 12-6 3 4-2 9-8 8-5-1-8-5-6-9"/>
         <g class="swirl__spark" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M33 29l-2 4M39 28l1 4M45 26l3 3"/></g>
@@ -69,35 +89,43 @@
     </button>
   </header>
 
+  <!-- Cinta -->
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon__track">
+      <span>Café de especialidad</span><i>★</i><span>Sin gluten y sin TACC</span><i>★</i><span>Posadas, Misiones</span><i>★</i><span>El mejor café de @cuervocafe</span><i>★</i><span>Cositas ricas dulces y saladas</span><i>★</i>
+      <span>Café de especialidad</span><i>★</i><span>Sin gluten y sin TACC</span><i>★</i><span>Posadas, Misiones</span><i>★</i><span>El mejor café de @cuervocafe</span><i>★</i><span>Cositas ricas dulces y saladas</span><i>★</i>
+    </div>
+  </div>
+
   <section class="showcase" id="especialidades" aria-label="Nuestras especialidades">
-    <p class="showcase__script">Café de especialidad &amp; vermut bar</p>
+    <p class="showcase__script">Café de especialidad · Posadas, Misiones</p>
 
     <div class="showcase__words">
-      <h2 class="words is-active" data-i="0"><span class="line"><span>Espresso.</span><span>Leche.</span></span><span class="line"><span>Avellana.</span><span>Caramelo.</span></span></h2>
-      <h2 class="words" data-i="1"><span class="line"><span>Manteca.</span><span>Chocolate.</span></span><span class="line"><span>Nutella.</span><span>Frutilla.</span></span></h2>
-      <h2 class="words" data-i="2"><span class="line"><span>Palta.</span><span>Huevo.</span></span><span class="line"><span>Crema.</span><span>Semillas.</span></span></h2>
-      <h2 class="words" data-i="3"><span class="line"><span>Chocolate.</span><span>Dulce.</span></span><span class="line"><span>Cacao.</span><span>Crema.</span></span></h2>
+      <h2 class="words is-active" data-i="0"><span class="line"><span>Espresso.</span><span>Leche.</span></span><span class="line"><span>Latte.</span><span>Arte.</span></span></h2>
+      <h2 class="words" data-i="1"><span class="line"><span>Manteca.</span><span>Chocolate.</span></span><span class="line"><span>Pistacho.</span><span>Crema.</span></span></h2>
+      <h2 class="words" data-i="2"><span class="line"><span>Palta.</span><span>Tomate.</span></span><span class="line"><span>Semillas.</span><span>Pan.</span></span></h2>
+      <h2 class="words" data-i="3"><span class="line"><span>Merengue.</span><span>Flores.</span></span><span class="line"><span>Crema.</span><span>Dulce.</span></span></h2>
     </div>
 
     <div class="wheel">
 <figure class="item is-active" data-i="0" style="--a:0deg;--tilt:-6deg">
-        <img class="item__art" src="img/pieza-cafe.webp" alt="Latte de especialidad con arte latte en taza blanca" width="900" height="693" style="--s:1" draggable="false">
+        <img class="item__art" src="img/pieza-cafe.webp" alt="Latte con arte latte en taza de cerámica" width="900" height="693" style="--s:1" draggable="false">
         <figcaption>Latte de especialidad</figcaption>
       </figure>
 
 <figure class="item" data-i="1" style="--a:90deg;--tilt:8deg">
-        <img class="item__art" src="img/pieza-croissant.webp" alt="Croissant con diplomata de chocolate, Nutella y frutilla" width="623" height="441" style="--s:1.2" draggable="false">
-        <figcaption>Croissant de chocolate y Nutella</figcaption>
+        <img class="item__art" src="img/pieza-croissant.webp" alt="Croissant relleno con merengue" width="623" height="441" style="--s:1.2" draggable="false">
+        <figcaption>Croissant relleno</figcaption>
       </figure>
 
 <figure class="item" data-i="2" style="--a:180deg;--tilt:-10deg">
-        <img class="item__art" src="img/pieza-toston.webp" alt="Tostón de palta y huevo revuelto sobre pan de campo" width="900" height="448" style="--s:1.3" draggable="false">
-        <figcaption>Tostón de palta y huevo</figcaption>
+        <img class="item__art" src="img/pieza-toston.webp" alt="Tostón de palta y tomate con semillas" width="900" height="448" style="--s:1.3" draggable="false">
+        <figcaption>Tostón de palta y tomate</figcaption>
       </figure>
 
 <figure class="item" data-i="3" style="--a:270deg;--tilt:6deg">
-        <img class="item__art" src="img/pieza-alfajor.webp" alt="Alfajor de chocolate con crema de cacao" width="515" height="518" style="--s:0.82" draggable="false">
-        <figcaption>Alfajor de chocolate</figcaption>
+        <img class="item__art" src="img/pieza-alfajor.webp" alt="Pavlova con flores comestibles" width="515" height="518" style="--s:0.82" draggable="false">
+        <figcaption>Pavlova con flores</figcaption>
       </figure>
     </div>
   </section>
@@ -106,7 +134,7 @@
   <section class="more" id="nosotros" aria-labelledby="more-title">
     <svg class="more__stamp" viewBox="0 0 400 400" aria-hidden="true">
       <defs><path id="stampPath" d="M200 200m-150 0a150 150 0 1 1 300 0a150 150 0 1 1 -300 0"/></defs>
-      <text><textPath href="#stampPath" startOffset="0">CAFÉ DE ESPECIALIDAD · VERMUT BAR · PAUZA · </textPath></text>
+      <text><textPath href="#stampPath" startOffset="0">CAFÉ DE ESPECIALIDAD · SOFFIO · POSADAS · MISIONES · </textPath></text>
     </svg>
 
     <div class="more__inner">
@@ -116,24 +144,24 @@
 
       <div class="cards">
       <article class="card" style="--d:0s">
-        <div class="card__photo"><img src="img/desayuno-1.jpg" alt="Croissants rellenos" loading="lazy" onerror="this.remove()"><img src="img/desayuno-2.jpg" alt="" loading="lazy" onerror="this.remove()"><img src="img/desayuno-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="card__photo"><img src="img/desayuno-1.jpg" alt="Croissant con merengue y chocolate" loading="lazy" onerror="this.remove()"><img src="img/desayuno-2.jpg" alt="" loading="lazy" onerror="this.remove()"><img src="img/desayuno-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
         <div class="card__text">
-          <h3>DESAYUNOS &amp; PASTELERÍA</h3>
-          <p>Medialunas, croissants rellenos, rolls NY, budines, alfajores y scones caseros. Armá tu combo con infusión: Completo, Lightweight o Baby Breakfast, con tostones, huevos y yogur con granola. Con opciones veganas y sin TACC.</p>
+          <h3>COSITAS RICAS DULCES</h3>
+          <p>Croissants rellenos de chocolate, pistacho y merengue, budines glaseados, pavlovas con flores y todo lo que sale recién hecho de nuestra pastelería. Con opciones sin gluten y sin TACC.</p>
         </div>
       </article>
       <article class="card" style="--d:0.12s">
-        <div class="card__photo"><img src="img/cafe-1.jpg" alt="Café de especialidad con arte latte" loading="lazy" onerror="this.remove()"><img src="img/cafe-2.jpg" alt="" loading="lazy" onerror="this.remove()"><img src="img/cafe-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="card__photo"><img src="img/cafe-1.jpg" alt="Latte art en taza" loading="lazy" onerror="this.remove()"><img src="img/cafe-2.jpg" alt="" loading="lazy" onerror="this.remove()"><img src="img/cafe-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
         <div class="card__text">
           <h3>CAFÉ DE ESPECIALIDAD</h3>
-          <p>Granos seleccionados de Brasil, Colombia, Bolivia y El Salvador, con dos variedades que rotan. Del espresso al Media Naranja, con almíbar casero de naranja y clavo, en versión caliente o helada.</p>
+          <p>Trabajamos con el mejor café de @cuervocafe: espressos, lattes con arte, cafés fríos y matcha, preparados por baristas que cuidan cada taza.</p>
         </div>
       </article>
       <article class="card" style="--d:0.24s">
-        <div class="card__photo"><img src="img/almuerzo-1.jpg" alt="Tostada de palta y huevo revuelto" loading="lazy" onerror="this.remove()"><img src="img/almuerzo-2.jpg" alt="" loading="lazy" onerror="this.remove()"><img src="img/almuerzo-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="card__photo"><img src="img/almuerzo-1.jpg" alt="Bagel con salmón, queso crema y alcaparras" loading="lazy" onerror="this.remove()"><img src="img/almuerzo-2.jpg" alt="" loading="lazy" onerror="this.remove()"><img src="img/almuerzo-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
         <div class="card__text">
-          <h3>ALMUERZO &amp; VERMUT</h3>
-          <p>Plato del día con entrada, principal, postre y bebida, wraps y sándwiches en ciabatta. Y para cerrar la tarde, una carta de vermut y cerveza.</p>
+          <h3>COSITAS RICAS SALADAS</h3>
+          <p>Bagels con salmón, tostones de palta y tomate, paninis, huevos revueltos y picadas de fiambres y quesos. Para desayunar, almorzar o merendar sin apuro.</p>
         </div>
       </article>
       </div>
@@ -143,40 +171,48 @@
   <section class="gallery" id="galeria" aria-label="Galería">
     <div class="gallery__track" aria-hidden="false">
       <ul class="gallery__row">
-        <li class="tile" style="--w:140px;--r:0deg;--g:0"><img src="img/galeria-1.jpg" alt="Rincón de ladrillo blanco" loading="lazy" onerror="this.remove()"></li>
-        <li class="tile" style="--w:280px;--r:0deg;--g:1"><img src="img/galeria-2.jpg" alt="Barista preparando café en la barra" loading="lazy" onerror="this.remove()"></li>
-        <li class="tile" style="--w:195px;--r:2deg;--g:2"><img src="img/galeria-3.jpg" alt="Mesa junto a la ventana" loading="lazy" onerror="this.remove()"></li>
-        <li class="tile" style="--w:280px;--r:0deg;--g:0"><img src="img/galeria-4.jpg" alt="Amigos compartiendo la mesa" loading="lazy" onerror="this.remove()"></li>
-        <li class="tile" style="--w:195px;--r:-2deg;--g:1"><img src="img/galeria-5.jpg" alt="Café para llevar con el logo de Pauza" loading="lazy" onerror="this.remove()"></li>
-        <li class="tile" style="--w:195px;--r:2deg;--g:2"><img src="img/galeria-6.jpg" alt="Interior con barra de cemento y madera" loading="lazy" onerror="this.remove()"></li>
-        <li class="tile" style="--w:100px;--r:0deg;--g:0"><img src="img/galeria-7.jpg" alt="Pared de madera con plantas" loading="lazy" onerror="this.remove()"></li>
+        <li class="tile" style="--w:140px;--r:0deg;--g:0"><img src="img/galeria-1.jpg" alt="Barra interior de Soffio" loading="lazy" onerror="this.remove()"></li>
+        <li class="tile" style="--w:280px;--r:0deg;--g:1"><img src="img/galeria-2.jpg" alt="Barista sirviendo un café con leche" loading="lazy" onerror="this.remove()"></li>
+        <li class="tile" style="--w:195px;--r:2deg;--g:2"><img src="img/galeria-3.jpg" alt="Café con espuma y latte art sobre mármol" loading="lazy" onerror="this.remove()"></li>
+        <li class="tile" style="--w:280px;--r:0deg;--g:0"><img src="img/galeria-4.jpg" alt="El equipo de Soffio celebrando en la barra" loading="lazy" onerror="this.remove()"></li>
+        <li class="tile" style="--w:195px;--r:-2deg;--g:1"><img src="img/galeria-5.jpg" alt="Tote bag de Soffio" loading="lazy" onerror="this.remove()"></li>
+        <li class="tile" style="--w:195px;--r:2deg;--g:2"><img src="img/galeria-6.jpg" alt="Máquina de espresso negra" loading="lazy" onerror="this.remove()"></li>
+        <li class="tile" style="--w:100px;--r:0deg;--g:0"><img src="img/galeria-7.jpg" alt="Flores junto a la barra" loading="lazy" onerror="this.remove()"></li>
       </ul>
     </div>
   </section>
 
-  <section class="actions" aria-label="Catering, giftcards y nosotros">
+  <section class="actions" aria-label="Pedidos, ubicación y nosotros">
     <div class="actions__inner">
       <article class="strip strip--right" id="catering">
         <span class="strip__icon" aria-hidden="true"><svg viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="45" cy="24" rx="30" ry="12"/><ellipse cx="45" cy="22" rx="8" ry="3.5"/><path d="M15 24v10c0 7 13 12 30 12s30-5 30-12V24"/><path d="M12 42v10c0 7 14 12 33 12s33-5 33-12V42"/><path d="M14 60v10c0 7 14 12 31 12s31-5 31-12V60"/><path d="M30 20h2M40 17h2M52 18h2M60 22h2M36 27h2M50 26h2"/></svg></span>
-        <h2 class="strip__title">¡Pedí para llevar!</h2>
-        <p class="strip__text">Tu café de especialidad y tus laminados donde quieras: en el local,<br>para llevar o con entrega a domicilio. Mirá la carta completa.</p>
-        <a class="btn-solid" href="#carta" data-open-menu>Ver la carta <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        <h2 class="strip__title">¡Pedí por PedidosYa!</h2>
+        <p class="strip__text">Tu café de especialidad y tus cositas ricas donde quieras:<br>en el local, para llevar o con entrega a domicilio en Posadas.</p>
+        <a class="btn-solid" href="https://www.pedidosya.com.ar/restaurantes/posadas/soffio-cafe-de-especialidad-7fbb74c4-f784-4698-a266-e608e0323f3a-menu" target="_blank" rel="noopener">Pedir ahora <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 12h16M14 6l6 6-6 6"/></svg></a>
       </article>
       <article class="strip strip--left" id="regalo">
         <span class="strip__icon" aria-hidden="true"><svg viewBox="0 0 90 70" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="52" height="34" rx="5" transform="rotate(-18 40 25)"/><rect x="26" y="26" width="54" height="34" rx="5" transform="rotate(-8 53 43)"/><path d="M40 38l8 8M48 38l-8 8M44 42l-4 10M44 42l8 8"/><path d="M68 40c-3 0-4 2-3 4s5 3 4 6-5 3-7 0M66 37v3M63 52v3"/></svg></span>
-        <h2 class="strip__title">Tres casas en Córdoba.</h2>
-        <p class="strip__text">Chacabuco 682 y Av. Estrada 175 en Nueva Córdoba, y Caseros 79<br>en el Centro. Elegí la que te quede más cerca.</p>
-        <a class="btn-solid" href="https://maps.app.goo.gl/rwJaQZqEhpJbWUxH9" target="_blank" rel="noopener">Cómo llegar <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 18L18 6M8 6h10v10"/></svg></a>
+        <h2 class="strip__title">Estamos en Fleming 1363.</h2>
+        <p class="strip__text">En Posadas, Misiones.<br>Pasá a tomar un café con nosotros.</p>
+        <a class="btn-solid" href="https://www.google.com/maps/search/?api=1&query=Soffio+Caf%C3%A9+Fleming+1363+Posadas+Misiones" target="_blank" rel="noopener">Cómo llegar <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 18L18 6M8 6h10v10"/></svg></a>
       </article>
       <article class="strip strip--right" id="historia">
         <span class="strip__icon" aria-hidden="true"><svg viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M44 80c-10-4-18-12-20-24-1-6 2-9 5-7 3 2 4 6 6 8l-2-22c0-4 5-5 6-1l3 14-1-26c0-4 5-5 6 0l2 22 2-24c1-4 6-3 6 1l-1 24 4-16c1-4 6-2 5 2L63 52c-1 12-8 22-19 28z"/><path d="M16 36c-3-5-4-10-3-16M8 40c-4-6-5-12-4-20M24 30c-2-4-3-8-2-12"/></svg></span>
         <h2 class="strip__title">Un poquito sobre nosotros</h2>
-        <p class="strip__text">Pauza abrió en octubre de 2022 en una casona antigua de Nueva Córdoba,<br>con ladrillo, madera y mármol. Hoy ya son tres casas.</p>
-        <a class="btn-solid" href="https://infonegocios.info/default/un-cafe-y-seguimos-pauza-una-cafeteria-de-especialidad-y-vermut-bar-en-nueva-cordoba-elegis-el-grano-del-pais-que-quieras" target="_blank" rel="noopener">Leer nuestra historia <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        <p class="strip__text">Ya cumplimos 3 años compartiendo café de especialidad en Posadas,<br>con el mejor grano de @cuervocafe y cositas ricas dulces y saladas.</p>
+        <a class="btn-solid" href="https://www.instagram.com/soffiocafe/" target="_blank" rel="noopener">Ver nuestra historia en Instagram <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 12h16M14 6l6 6-6 6"/></svg></a>
       </article>
     </div>
   </section>
   </div>
+
+  <section class="stats" aria-label="Soffio en números">
+    <div class="stats__inner">
+      <div class="stat"><p class="stat__num" data-count="23" data-suffix="K">0</p><p class="stat__lbl">personas nos siguen en Instagram</p></div>
+      <div class="stat"><p class="stat__num" data-count="3">0</p><p class="stat__lbl">años compartiendo café de especialidad</p></div>
+      <div class="stat"><p class="stat__num" data-count="106">0</p><p class="stat__lbl">publicaciones de cositas ricas</p></div>
+    </div>
+  </section>
 
   <section class="social" id="instagram" aria-label="Instagram">
     <div class="social__stage">
@@ -190,35 +226,35 @@
         <g fill="#efe7d3"><circle cx="105" cy="100" r="2"/><circle cx="125" cy="120" r="2"/><circle cx="138" cy="98" r="2"/><circle cx="112" cy="132" r="2"/><circle cx="170" cy="130" r="2"/></g>
       </svg>
 
-      <a class="social__insta" href="https://www.instagram.com/pauzaok/" target="_blank" rel="noopener" aria-label="Instagram de Pauza">
+      <a class="social__insta" href="https://www.instagram.com/soffiocafe/" target="_blank" rel="noopener" aria-label="Instagram de Soffio">
         <svg viewBox="0 0 24 24" width="26" height="26"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="#fff"/></svg>
       </a>
 
-      <a class="social__follow" href="https://www.instagram.com/pauzaok/" target="_blank" rel="noopener">
+      <a class="social__follow" href="https://www.instagram.com/soffiocafe/" target="_blank" rel="noopener">
         <svg viewBox="0 0 28 18" width="22" height="14" aria-hidden="true"><path fill="currentColor" d="M1 4l6 5 7-8 7 8 6-5-2 12H3L1 4z"/></svg>
-        <span>SEGUINOS @PAUZAOK</span>
+        <span>SEGUINOS @SOFFIOCAFE</span>
       </a>
 
-      <figure class="snap" style="--x:0;--y:12.5;--w:13;--ar:1.408;--r:-4deg"><img src="img/insta-1.jpg" alt="Frente de Pauza con terraza" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap snap--polaroid" style="--x:13;--y:3;--w:16;--ar:0.599;--r:3deg"><img src="img/insta-2.jpg" alt="Pauza de noche con clientes en el salón" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap" style="--x:24;--y:14;--w:8;--ar:0.457;--r:5deg"><img src="img/insta-3.jpg" alt="Toldo de Pauza Café" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap" style="--x:49;--y:7;--w:16;--ar:1.432;--r:-5deg"><img src="img/insta-4.jpg" alt="Café, galleta y alfajores sobre la mesa" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap snap--polaroid" style="--x:68;--y:8;--w:10.5;--ar:1.081;--r:2deg"><img src="img/insta-5.jpg" alt="Budín de zanahoria y café" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap" style="--x:61;--y:29;--w:18.5;--ar:2.004;--r:-3deg"><img src="img/insta-6.jpg" alt="Postre de dulce de leche y chocolate" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap" style="--x:57;--y:46;--w:19;--ar:1.057;--r:3deg"><img src="img/insta-7.jpg" alt="Galleta rellena de Nutella" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap snap--polaroid" style="--x:34;--y:43;--w:12;--ar:0.748;--r:-1deg"><img src="img/insta-8.jpg" alt="Vaso de café para llevar" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap snap--polaroid" style="--x:6;--y:33;--w:17;--ar:0.700;--r:-2deg"><img src="img/insta-9.jpg" alt="Frente de Pauza al anochecer" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap" style="--x:22;--y:55;--w:14;--ar:1.108;--r:3deg"><img src="img/insta-10.jpg" alt="Vitrina de budines y galletas" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap" style="--x:3;--y:34;--w:6;--ar:0.353;--r:0deg"><img src="img/insta-11.jpg" alt="Cartel de Pauza en la vereda" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap" style="--x:51;--y:46;--w:8;--ar:0.531;--r:-3deg"><img src="img/insta-12.jpg" alt="Taza de café de cerámica" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap snap--video" style="--x:80;--y:3;--w:9.5;--ar:0.5625;--r:2deg"><video muted loop playsinline preload="metadata" poster="img/video/vid-3.jpg" aria-label="Un día en Pauza, de la mañana a la tarde"><source src="img/video/vid-3.mp4" type="video/mp4"></video></figure>
-      <figure class="snap snap--polaroid" style="--x:90;--y:6;--w:10;--ar:0.78;--r:-3deg"><img src="img/insta-13.jpg" alt="Café con leche y budín en la mesa" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap" style="--x:80;--y:31;--w:12;--ar:1;--r:-2deg"><img src="img/insta-14.jpg" alt="Galleta red velvet" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap snap--video" style="--x:90.5;--y:31;--w:9.5;--ar:0.5625;--r:3deg"><video muted loop playsinline preload="metadata" poster="img/video/vid-4.jpg" aria-label="Café con arte latte sobre la mesa"><source src="img/video/vid-4.mp4" type="video/mp4"></video></figure>
-      <figure class="snap" style="--x:82;--y:58;--w:9.5;--ar:0.56;--r:-2deg"><img src="img/insta-15.jpg" alt="Bowl de yogur con frutas y granola" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap snap--polaroid" style="--x:90;--y:55;--w:10.5;--ar:0.8;--r:3deg"><img src="img/insta-16.jpg" alt="Barra de Pauza con su ilustración" loading="lazy" draggable="false" onerror="this.remove()"></figure>
-      <figure class="snap snap--video" style="--x:35.5;--y:27;--w:12;--ar:1.18;--r:-2deg"><video muted loop playsinline preload="metadata" poster="img/video/vid-2.jpg" aria-label="Bowl de yogur con frutas de estación"><source src="img/video/vid-2.mp4" type="video/mp4"></video></figure>
-      <figure class="snap snap--video" style="--x:76.5;--y:43;--w:8;--ar:0.5625;--r:4deg"><video muted loop playsinline preload="metadata" poster="img/video/vid-5.jpg" aria-label="Charla en la barra con el barista"><source src="img/video/vid-5.mp4" type="video/mp4"></video></figure>
+      <figure class="snap" style="--x:0;--y:12.5;--w:13;--ar:0.563;--r:-4deg"><img src="img/insta-1.jpg" alt="Terraza de Soffio con pérgola" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap snap--polaroid" style="--x:13;--y:3;--w:16;--ar:0.750;--r:3deg"><img src="img/insta-2.jpg" alt="Salón de Soffio con clientas" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap" style="--x:24;--y:14;--w:8;--ar:0.563;--r:5deg"><img src="img/insta-3.jpg" alt="Vitrina con flores y café para llevar" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap" style="--x:49;--y:7;--w:16;--ar:0.800;--r:-5deg"><img src="img/insta-4.jpg" alt="Barista y compañera sonriendo" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap snap--polaroid" style="--x:68;--y:8;--w:10.5;--ar:0.800;--r:2deg"><img src="img/insta-5.jpg" alt="Barista preparando un jugo de naranja" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap" style="--x:61;--y:29;--w:18.5;--ar:0.800;--r:-3deg"><img src="img/insta-6.jpg" alt="Barista con dos tragos cítricos" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap" style="--x:57;--y:46;--w:19;--ar:0.802;--r:3deg"><img src="img/insta-7.jpg" alt="Pastelera emplatando un postre" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap snap--polaroid" style="--x:34;--y:43;--w:12;--ar:0.563;--r:-1deg"><img src="img/insta-8.jpg" alt="Dos cafés con leche sobre la mesa" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap snap--polaroid" style="--x:6;--y:33;--w:17;--ar:0.801;--r:-2deg"><img src="img/insta-9.jpg" alt="Café frío con croissant de chocolate y pistacho" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap" style="--x:22;--y:55;--w:14;--ar:0.563;--r:3deg"><img src="img/insta-10.jpg" alt="Trago rojo con sorbete dorado" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap" style="--x:3;--y:34;--w:6;--ar:0.563;--r:0deg"><img src="img/insta-11.jpg" alt="Merengue con flores comestibles" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap" style="--x:51;--y:46;--w:8;--ar:0.563;--r:-3deg"><img src="img/insta-12.jpg" alt="Budín de pistacho glaseado" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap snap--video" style="--x:80;--y:3;--w:9.5;--ar:0.5625;--r:2deg"><video muted loop playsinline preload="metadata" poster="img/video/vid-3.jpg" aria-label="La terraza de Soffio"><source src="img/video/hero.mp4" type="video/mp4"></video></figure>
+      <figure class="snap snap--polaroid" style="--x:90;--y:6;--w:10;--ar:0.563;--r:-3deg"><img src="img/insta-13.jpg" alt="Croissant de chocolate con cubiertos dorados" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap" style="--x:80;--y:31;--w:12;--ar:0.563;--r:-2deg"><img src="img/insta-14.jpg" alt="Postre con flores comestibles" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap snap--video" style="--x:90.5;--y:31;--w:9.5;--ar:0.5625;--r:3deg"><video muted loop playsinline preload="metadata" poster="img/video/vid-4.jpg" aria-label="Croquembouche con velitas"><source src="img/video/vid-4.mp4" type="video/mp4"></video></figure>
+      <figure class="snap" style="--x:82;--y:58;--w:9.5;--ar:0.801;--r:-2deg"><img src="img/insta-15.jpg" alt="Matcha frío con sándwiches" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap snap--polaroid" style="--x:90;--y:55;--w:10.5;--ar:0.563;--r:3deg"><img src="img/insta-16.jpg" alt="Huevos revueltos con pan tostado" loading="lazy" draggable="false" onerror="this.remove()"></figure>
+      <figure class="snap snap--video" style="--x:35.5;--y:27;--w:9.5;--ar:0.5625;--r:-2deg"><video muted loop playsinline preload="metadata" poster="img/video/vid-2.jpg" aria-label="Café con flores en la barra"><source src="img/video/vid-2.mp4" type="video/mp4"></video></figure>
+      <figure class="snap snap--video" style="--x:76.5;--y:43;--w:8;--ar:0.5625;--r:4deg"><video muted loop playsinline preload="metadata" poster="img/video/vid-5.jpg" aria-label="Café recién molido"><source src="img/video/vid-5.mp4" type="video/mp4"></video></figure>
 
       <div class="social__badge snap-drag" style="--x:0.5;--y:46">
         <svg viewBox="0 0 120 120" aria-hidden="true">
@@ -233,54 +269,51 @@
 
     <section class="reviews" id="resenas" aria-labelledby="rv-title">
     <div class="reviews__head">
-      <h2 id="rv-title">Lo que dicen<br>quienes <em>nos visitan</em></h2>
-      <p>Nuestros clientes nos califican con <strong>4,5 sobre 5</strong> en Google. Gracias por elegirnos, por volver y por compartir tu cafecito.</p>
+      <h2 id="rv-title">Un lugar<br>para <em>volver</em></h2>
+      <p><strong>23 mil personas</strong> nos siguen en Instagram. Pasá por Fleming 1363, pedí tu cafecito y contanos qué te pareció.</p>
     </div>
 
     <div class="reviews__wall">
         <div class="rv-col rv-col--up"><div class="rv-track">
-          <article class="rv-card rv-stat"><p class="rv-big">4,5</p><span class="rv-stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg></span><p class="rv-label">Calificación de nuestros clientes en Google</p><p class="rv-sub">Café de especialidad · Córdoba</p></article>
-          <figure class="rv-card rv-photo " style="--h:230px"><img src="img/insta-4.jpg" alt="Café, galleta y alfajores sobre la mesa" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
-          <article class="rv-card rv-review"><p class="rv-quote">“Muy rico el bowl de yogur natural, exquisita la granola y mix de frutas frescas.”</p><span class="rv-stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg></span><p class="rv-who"><strong>Cliente de Google</strong><span>Chacabuco</span></p></article>
-          <figure class="rv-card rv-photo rv-bw" style="--h:250px"><img src="img/galeria-6.jpg" alt="Interior con barra de cemento y madera" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
-          <article class="rv-card rv-cta"><span class="rv-badge" aria-hidden="true">★</span><h3>¿Ya nos visitaste?</h3><p>Contanos cómo fue tu experiencia en Google. ¡Tu opinión nos ayuda un montón!</p><a href="https://maps.app.goo.gl/rwJaQZqEhpJbWUxH9" target="_blank" rel="noopener">Dejá tu reseña →</a></article>
+          <article class="rv-card rv-stat"><p class="rv-big">23K</p><p class="rv-label">seguidores en Instagram</p><p class="rv-sub">@soffiocafe</p></article>
+          <figure class="rv-card rv-photo " style="--h:230px"><img src="img/insta-4.jpg" alt="Barista y compañera sonriendo" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
+          <article class="rv-card rv-review"><p class="rv-quote">“El mejor café de @cuervocafe.”</p><p class="rv-who"><strong>Soffio Café</strong><span>Café de especialidad</span></p></article>
+          <figure class="rv-card rv-photo rv-bw" style="--h:250px"><img src="img/galeria-6.jpg" alt="Máquina de espresso negra" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
+          <article class="rv-card rv-cta"><span class="rv-badge" aria-hidden="true">★</span><h3>¿Ya nos visitaste?</h3><p>Contanos cómo fue tu experiencia en Google. ¡Tu opinión nos ayuda un montón!</p><a href="https://www.google.com/search?q=Soffio+Caf%C3%A9+Posadas" target="_blank" rel="noopener">Dejá tu reseña →</a></article>
         </div></div>
         <div class="rv-col rv-col--down"><div class="rv-track">
-          <figure class="rv-card rv-photo " style="--h:270px"><img src="img/cafe-1.jpg" alt="Café de especialidad con arte latte" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
-          <article class="rv-card rv-review"><p class="rv-quote">“Hermoso lugar y excelente comida, los platos súper abundantes. Pedí el baby breakfast pensando que era chiquito y me tuvo que ayudar mi novio a terminarlo.”</p><span class="rv-stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg></span><p class="rv-who"><strong>Milagros C.</strong><span>Reseña en Google</span></p></article>
-          <figure class="rv-card rv-photo " style="--h:210px"><img src="img/galeria-3.jpg" alt="Mesa junto a la ventana" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
-          <article class="rv-card rv-info"><p class="rv-k">Dónde</p><h3>Nueva Córdoba y Centro</h3><p>Chacabuco 682 · Av. Estrada 175 · Caseros 79, Córdoba.</p></article>
-          <figure class="rv-card rv-photo " style="--h:230px"><img src="img/desayuno-1.jpg" alt="Croissants rellenos" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
+          <figure class="rv-card rv-photo " style="--h:270px"><img src="img/cafe-1.jpg" alt="Latte art en taza" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
+          <article class="rv-card rv-info"><p class="rv-k">Dónde</p><h3>Fleming 1363</h3><p>Posadas, Misiones, Argentina.</p></article>
+          <figure class="rv-card rv-photo " style="--h:210px"><img src="img/galeria-3.jpg" alt="Café con espuma y latte art sobre mármol" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
+          <article class="rv-card rv-info"><p class="rv-k">Para todos</p><h3>Sin gluten y sin TACC</h3><p>Tenemos opciones para que todos compartan la mesa.</p></article>
+          <figure class="rv-card rv-photo " style="--h:230px"><img src="img/desayuno-1.jpg" alt="Croissant con merengue y chocolate" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
         </div></div>
         <div class="rv-col rv-col--up"><div class="rv-track">
-          <figure class="rv-card rv-photo " style="--h:220px"><img src="img/galeria-2.jpg" alt="Barista preparando café en la barra" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
-          <article class="rv-card rv-stat"><p class="rv-big">1.149</p><span class="rv-stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg></span><p class="rv-label">reseñas en Google</p><p class="rv-sub">Gracias por cada una</p></article>
-          <article class="rv-card rv-review"><p class="rv-quote">“Siempre vuelvo. Un lugar para disfrutar del buen café.”</p><span class="rv-stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg></span><p class="rv-who"><strong>Cliente de Google</strong><span>Chacabuco</span></p></article>
-          <figure class="rv-card rv-photo rv-bw" style="--h:250px"><img src="img/insta-12.jpg" alt="Taza de café de cerámica" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
-          <article class="rv-card rv-info"><p class="rv-k">Horarios</p><h3>Todos los días</h3><p>Lun a Vie 8:00 – 21:30 · Sáb 9:00 – 21:30. Domingos: consultar.</p></article>
+          <figure class="rv-card rv-photo " style="--h:220px"><img src="img/galeria-2.jpg" alt="Barista sirviendo un café con leche" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
+          <article class="rv-card rv-stat"><p class="rv-big">3</p><p class="rv-label">años compartiendo café</p><p class="rv-sub">Gracias por cada visita</p></article>
+          <figure class="rv-card rv-photo rv-bw" style="--h:250px"><img src="img/insta-12.jpg" alt="Budín de pistacho glaseado" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
+          <article class="rv-card rv-info"><p class="rv-k">Pedidos</p><h3>PedidosYa y WhatsApp</h3><p>Pedí tu cafecito y tus cositas ricas sin moverte de casa.</p></article>
         </div></div>
         <div class="rv-col rv-col--down"><div class="rv-track">
-          <article class="rv-card rv-info"><p class="rv-k">Seguinos</p><h3>@pauzaok</h3><p>Cada día mostramos lo que sale de la barra y de la cocina.</p></article>
-          <figure class="rv-card rv-photo " style="--h:240px"><img src="img/desayuno-3.jpg" alt="Brownie con crema" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
-          <article class="rv-card rv-review"><p class="rv-quote">“Pedimos cafés helados de caramelo y avellanas, ambos muy ricos.”</p><span class="rv-stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg></span><p class="rv-who"><strong>Cliente de Google</strong><span>Chacabuco</span></p></article>
-          <figure class="rv-card rv-photo " style="--h:230px"><img src="img/almuerzo-1.jpg" alt="Tostada de palta y huevo revuelto" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
-          <article class="rv-card rv-stat"><p class="rv-big">4,7</p><span class="rv-stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg></span><p class="rv-label">en la sucursal de Caseros</p><p class="rv-sub">Estrada: 4,6 · Chacabuco: 4,5</p></article>
+          <article class="rv-card rv-info"><p class="rv-k">Seguinos</p><h3>@soffiocafe</h3><p>Cada día mostramos lo que sale de la barra y de la cocina.</p></article>
+          <figure class="rv-card rv-photo " style="--h:240px"><img src="img/desayuno-3.jpg" alt="Croissants de chocolate y coco sobre rejilla" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
+          <article class="rv-card rv-review"><p class="rv-quote">“Cositas ricas dulces y saladas.”</p><p class="rv-who"><strong>Soffio Café</strong><span>Posadas, Misiones</span></p></article>
+          <figure class="rv-card rv-photo " style="--h:230px"><img src="img/almuerzo-1.jpg" alt="Bagel con salmón, queso crema y alcaparras" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
         </div></div>
         <div class="rv-col rv-col--up"><div class="rv-track">
-          <figure class="rv-card rv-photo " style="--h:270px"><img src="img/insta-9.jpg" alt="Frente de Pauza al anochecer" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
-          <article class="rv-card rv-review"><p class="rv-quote">“Me pedí un latte XL y una croissant con diplomata de chocolate y Nutella. Súper rico todo.”</p><span class="rv-stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg></span><p class="rv-who"><strong>Flor O.</strong><span>Reseña en Google</span></p></article>
-          <figure class="rv-card rv-photo " style="--h:220px"><img src="img/galeria-5.jpg" alt="Café para llevar con el logo de Pauza" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
-          <article class="rv-card rv-review"><p class="rv-quote">“Pensé que era solo cafetería y me llevé una buena sorpresa cuando me senté a almorzar. Los platos súper abundantes y la atención de los chicos muy buena.”</p><span class="rv-stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.800 9.400 9 8.600z"/></svg></span><p class="rv-who"><strong>Aye C.</strong><span>Reseña en Google</span></p></article>
-          <figure class="rv-card rv-photo rv-bw" style="--h:230px"><img src="img/insta-3.jpg" alt="Toldo de Pauza Café" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
+          <figure class="rv-card rv-photo " style="--h:270px"><img src="img/insta-9.jpg" alt="Café frío con croissant de chocolate y pistacho" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
+          <article class="rv-card rv-info"><p class="rv-k">Música</p><h3>Spotify Soffio</h3><p>Nuestra playlist para acompañar el café.</p></article>
+          <figure class="rv-card rv-photo " style="--h:220px"><img src="img/galeria-5.jpg" alt="Tote bag de Soffio" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
+          <figure class="rv-card rv-photo rv-bw" style="--h:230px"><img src="img/insta-3.jpg" alt="Vitrina con flores y café para llevar" loading="lazy" onerror="this.parentElement.classList.add('is-empty');this.remove()"></figure>
         </div></div>
     </div>
 
-    <a class="reviews__link" href="https://maps.app.goo.gl/rwJaQZqEhpJbWUxH9" target="_blank" rel="noopener">Leer las reseñas en Google</a>
+    <a class="reviews__link" href="https://www.google.com/search?q=Soffio+Caf%C3%A9+Posadas" target="_blank" rel="noopener">Dejanos tu reseña en Google</a>
   </section>
 
   <footer class="footer" id="contacto" data-background="gradient">
-    <div class="footer__brand" aria-label="Café Pauza">
-      <img src="img/logo-light.png" alt="Café Pauza — Café de especialidad &amp; Vermut bar">
+    <div class="footer__brand" aria-label="Soffio Café">
+      <img src="img/logo-light.png" alt="Soffio Café" width="1000" height="483">
     </div>
 
     <div class="footer__drop" id="dropLayer" aria-hidden="true"></div>
@@ -308,25 +341,26 @@
     <div class="footer__cards">
       <section class="info-card">
         <h3>CÓMO LLEGAR</h3>
-        <p>Chacabuco 682 · Av. Estrada 175<br>Nueva Córdoba<br>Caseros 79 · Centro</p>
-        <p class="info-card__phone"><a href="https://www.instagram.com/pauzaok/" target="_blank" rel="noopener">@pauzaok</a></p>
+        <p>Fleming 1363<br>Posadas, Misiones</p>
+        <p class="info-card__phone"><a href="https://www.google.com/maps/search/?api=1&query=Soffio+Caf%C3%A9+Fleming+1363+Posadas+Misiones" target="_blank" rel="noopener">Abrir en Google Maps</a></p>
       </section>
       <section class="info-card">
-        <h3>HORARIOS</h3>
-        <p>Lun a Vie 8:00 – 21:30<br>Sáb 9:00 – 21:30<br>Dom: consultar</p>
+        <h3>HORARIOS Y PEDIDOS</h3>
+        <p>Mirá los horarios actualizados en nuestras historias destacadas de Instagram.<br><a href="https://bit.ly/hola_soffiocafe" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://www.pedidosya.com.ar/restaurantes/posadas/soffio-cafe-de-especialidad-7fbb74c4-f784-4698-a266-e608e0323f3a-menu" target="_blank" rel="noopener">PedidosYa</a></p>
         <h3 class="info-card__sub">SEGUINOS</h3>
         <div class="info-card__social">
-          <a href="https://www.facebook.com/somospauza/" target="_blank" rel="noopener" aria-label="Facebook de Pauza"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.200-.1-2.300-.1-2.300 0-3.800 1.400-3.800 3.900v2.300H7.900v3h2.600V21z"/></svg></a>
-          <a href="https://www.instagram.com/pauzaok/" target="_blank" rel="noopener" aria-label="Instagram de Pauza"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.200" cy="6.800" r="1.100" fill="currentColor"/></svg></a>
+          <a href="https://www.instagram.com/soffiocafe/" target="_blank" rel="noopener" aria-label="Instagram de Soffio"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.200" cy="6.800" r="1.100" fill="currentColor"/></svg></a>
+          <a href="https://bit.ly/hola_soffiocafe" target="_blank" rel="noopener" aria-label="WhatsApp de Soffio"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 20l1.2-4.2A8 8 0 1 1 8.300 18.900z"/><path fill="currentColor" d="M9.500 8.500c.3 2.200 2.300 4.200 4.500 4.600l1-1.200-1.800-.9-.7.700c-.8-.3-1.600-1.100-1.900-1.900l.7-.7-.9-1.800z"/></svg></a>
+          <a href="https://spotify.link/JSLL1ZF5FDb" target="_blank" rel="noopener" aria-label="Spotify de Soffio"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="8.500" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M7.500 10c3-1 6.500-.7 9 .8M8 13c2.500-.7 5-.5 7.300.8M8.600 15.800c2-.5 3.800-.3 5.600.6"/></svg></a>
         </div>
       </section>
     </div>
 
     <div class="footer__bottom">
-      <p>Pauza Café ©2026</p>
+      <p class="footer__copy"><img class="footer__emblem" src="img/footer.jpg" alt="SC — Soffio Café" width="150" height="150" loading="lazy"> Soffio Café ©2026 · Posadas, Misiones</p>
       <div class="footer__legal">
         <a href="#carta" data-open-menu>Ver carta</a>
-        <a href="https://maps.app.goo.gl/rwJaQZqEhpJbWUxH9" target="_blank" rel="noopener">Cómo llegar</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Soffio+Caf%C3%A9+Fleming+1363+Posadas+Misiones" target="_blank" rel="noopener">Cómo llegar</a>
         <a class="to-top" href="#inicio" aria-label="Volver arriba"><svg viewBox="0 0 24 24" width="26" height="26"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 20V5M5.500 11.500L12 5l6.500 6.500"/></svg></a>
       </div>
     </div>
@@ -339,24 +373,24 @@
       <span class="burger" aria-hidden="true"><i></i><i></i><i></i></span>
     </button>
     <a href="#nosotros">Nosotros</a>
-    <a href="#catering">Para llevar</a>
-    <a href="#cafe">Café</a>
+    <a href="#catering">Pedidos</a>
+    <a href="#especialidades">Café</a>
     <a href="#carta" data-open-menu>Carta</a>
-    <a href="#regalo">Sucursales</a>
+    <a href="#regalo">Ubicación</a>
     <a href="#contacto">Contacto</a>
-    <a href="https://www.instagram.com/pauzaok/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.instagram.com/soffiocafe/" target="_blank" rel="noopener">Instagram</a>
   </nav>
 
   <div class="mmenu" id="mobileMenu" data-background="gradient" aria-hidden="true">
-    <img class="mmenu__logo" src="img/logo-light.png" alt="Pauza Café — Café de especialidad &amp; Vermut bar" width="120" height="120">
+    <img class="mmenu__logo" src="img/logo-light.png" alt="Soffio Café" width="1000" height="483">
     <nav class="mmenu__links" aria-label="Menú">
       <a href="#nosotros" style="--i:0">Nosotros</a>
-      <a href="#catering" style="--i:1">Para llevar</a>
-      <a href="#cafe" style="--i:2">Café</a>
+      <a href="#catering" style="--i:1">Pedidos</a>
+      <a href="#especialidades" style="--i:2">Café</a>
       <a href="#carta" data-open-menu style="--i:3">Carta</a>
-      <a href="#regalo" style="--i:4">Sucursales</a>
+      <a href="#regalo" style="--i:4">Ubicación</a>
       <a href="#contacto" style="--i:5">Contacto</a>
-      <a href="https://www.instagram.com/pauzaok/" target="_blank" rel="noopener" style="--i:6">Instagram</a>
+      <a href="https://www.instagram.com/soffiocafe/" target="_blank" rel="noopener" style="--i:6">Instagram</a>
     </nav>
   </div>
 
@@ -374,200 +408,59 @@
   <dialog class="menu" id="carta" aria-labelledby="menuTitle">
     <div class="menu__inner">
       <header class="menu__head">
-        <img src="img/logo.png" alt="" width="64" height="64">
+        <img src="img/logo.png" alt="Soffio Café" width="1000" height="483">
         <div>
           <h2 id="menuTitle">Nuestra carta</h2>
-          <p>Café de especialidad &amp; Vermut bar</p>
+          <p>Café de especialidad · Posadas, Misiones</p>
         </div>
         <button class="menu__close" type="button" aria-label="Cerrar carta"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M5 5l14 14M19 5L5 19"/></svg></button>
       </header>
-      <div class="menu__tabs" role="tablist" aria-label="Secciones de la carta">
-          <button class="menu__tab is-active" role="tab" id="menuTab0" aria-controls="menuPanel0" aria-selected="true" type="button">Cafetería</button>
-          <button class="menu__tab" role="tab" id="menuTab1" aria-controls="menuPanel1" aria-selected="false" type="button">Pastelería</button>
-          <button class="menu__tab" role="tab" id="menuTab2" aria-controls="menuPanel2" aria-selected="false" type="button">Cocina</button>
-          <button class="menu__tab" role="tab" id="menuTab3" aria-controls="menuPanel3" aria-selected="false" type="button">Almuerzos y bebidas</button>
-      </div>
       <div class="menu__body">
-        <div class="menu__panel is-active" role="tabpanel" id="menuPanel0" aria-labelledby="menuTab0">
+        <div class="menu__panel is-active">
           <section class="menu__group">
-            <h3>Calientes</h3>
+            <h3>Café de especialidad</h3>
             <ul>
-              <li><strong>Espresso</strong></li>
-              <li><strong>Espresso macchiato</strong></li>
-              <li><strong>Doppio</strong></li>
-              <li><strong>Lungo</strong></li>
-              <li><strong>Americano</strong><span>Simple o doble</span></li>
-              <li><strong>Cortado</strong></li>
-              <li><strong>Magic</strong></li>
-              <li><strong>Flat White</strong></li>
-              <li><strong>Capuchino</strong></li>
-              <li><strong>Latte XL</strong></li>
-              <li><strong>Latte M</strong></li>
-              <li><strong>Moca</strong></li>
-              <li><strong>Caramel latte</strong></li>
-              <li><strong>Vanilla latte</strong></li>
-              <li><strong>Avellana latte</strong></li>
-              <li><strong>Coco latte</strong></li>
-              <li><strong>Pistacchio latte</strong></li>
-              <li><strong>Nutella latte</strong></li>
-              <li><strong>Chocolate especial</strong><span>Con pasta de avellanas</span></li>
-              <li><strong>Media Naranja</strong><span>Shot de espresso con leche texturizada, chocolate amargo, almíbar casero de naranja y clavo de olor.</span></li>
-              <li><strong>Té</strong><span>Consultar variedad</span></li>
+              <li><strong>Espressos y cafés con leche</strong><span>Con el mejor café de @cuervocafe.</span></li>
+              <li><strong>Lattes con arte</strong><span>Calientes y fríos.</span></li>
               <li><strong>Matcha latte</strong></li>
+              <li><strong>Cafés fríos</strong><span>Para los días de calor.</span></li>
+              <li><strong>Jugos y refrescos</strong></li>
             </ul>
           </section>
           <section class="menu__group">
-            <h3>Frío</h3>
+            <h3>Cositas ricas dulces</h3>
             <ul>
-              <li><strong>Espresso con hielo</strong></li>
-              <li><strong>Espresso tónica</strong></li>
-              <li><strong>Cold Flat</strong></li>
-              <li><strong>Iced Latte</strong></li>
-              <li><strong>Iced Caramel latte</strong></li>
-              <li><strong>Iced Vanilla latte</strong></li>
-              <li><strong>Iced Avellana latte</strong></li>
-              <li><strong>Iced Coco latte</strong></li>
-              <li><strong>Iced Americano doble</strong></li>
-              <li><strong>Tropical</strong><span>Té frío de hibiscus con almíbar casero y limón.</span></li>
-            </ul><p class="menu__note">Extra leche de almendras.</p>
-          </section>
-        </div>
-        <div class="menu__panel" role="tabpanel" id="menuPanel1" aria-labelledby="menuTab1" hidden>
-          <section class="menu__group">
-            <h3>Laminados</h3>
-            <ul>
-              <li><strong>Medialuna</strong></li>
-              <li><strong>Croissant french</strong></li>
-              <li><strong>Croissant de vainilla</strong><span>Con diplomata de vainilla y corazón de confitura de frutilla.</span></li>
-              <li><strong>Croissant de chocolate</strong><span>Con diplomata de chocolate y corazón de Nutella.</span></li>
-              <li><strong>Croissant de dulce de leche</strong><span>Espolvoreado con azúcar impalpable.</span></li>
-              <li><strong>Croissant de jamón y queso</strong><span>Con jamón natural y queso tybo.</span></li>
-              <li><strong>Roll de canela y nuez</strong></li>
-              <li><strong>Roll NY clásico</strong><span>Con jamón, queso tybo y huevo revuelto.</span></li>
-              <li><strong>Roll NY crudo</strong><span>Con jamón crudo, rúcula, cherrys confitados, queso parmesano y dressing de rúcula y parmesano.</span></li>
-              <li><strong>Roll NY con Nutella</strong></li>
+              <li><strong>Croissants rellenos</strong><span>De chocolate, pistacho y merengue.</span></li>
+              <li><strong>Budines glaseados</strong><span>Como el de pistacho.</span></li>
+              <li><strong>Pavlovas con flores</strong></li>
+              <li><strong>Box Amore Mío</strong><span>Para regalar o compartir.</span></li>
             </ul>
           </section>
           <section class="menu__group">
-            <h3>Budines</h3>
+            <h3>Cositas ricas saladas</h3>
             <ul>
-              <li><strong>Zanahoria</strong></li>
-              <li><strong>Limón y amapolas</strong></li>
-              <li><strong>Banana, chocolate y nuez</strong><span>Vegano</span></li>
-              <li><strong>Torta brownie</strong><span>Con dulce de leche y crema. Consultar disponibilidad.</span></li>
+              <li><strong>Bagel con salmón</strong><span>Queso crema y alcaparras.</span></li>
+              <li><strong>Tostón de palta y tomate</strong><span>Con semillas.</span></li>
+              <li><strong>Paninis</strong></li>
+              <li><strong>Huevos revueltos</strong><span>Con tostada.</span></li>
+              <li><strong>Picada de fiambres y quesos</strong></li>
+              <li><strong>Mbeju</strong><span>Hecho en Posadas, Misiones.</span></li>
             </ul>
           </section>
           <section class="menu__group">
-            <h3>Alfajores</h3>
+            <h3>Sin gluten y sin TACC</h3>
             <ul>
-              <li><strong>Kinder</strong></li>
-              <li><strong>Pistacho</strong></li>
-              <li><strong>Mar del Plata</strong></li>
-              <li><strong>Limón, frutos rojos y chocolate blanco</strong></li>
-            </ul>
-          </section>
-          <section class="menu__group">
-            <h3>Galletas y scones</h3>
-            <ul>
-              <li><strong>Red velvet</strong></li>
-              <li><strong>Rellena de Nutella y chips de chocolate</strong></li>
-              <li><strong>Chocolate</strong><span>Con chips de chocolate negro y corazón de chocolate Águila.</span></li>
-              <li><strong>Vainilla</strong><span>Con chips de chocolate blanco y negro.</span></li>
-              <li><strong>Limón, chocolate blanco y pistacho</strong></li>
-              <li><strong>Scone de queso</strong></li>
-            </ul>
-          </section>
-          <section class="menu__group">
-            <h3>Sin TACC</h3>
-            <ul>
-              <li><strong>Brownie</strong></li>
-              <li><strong>Tortita de limón</strong></li>
-              <li><strong>Blondie con chips de chocolate</strong></li>
-              <li><strong>Alfabrownie</strong></li>
-              <li><strong>Tartita de coco con dulce de leche</strong></li>
-            </ul>
-          </section>
-        </div>
-        <div class="menu__panel" role="tabpanel" id="menuPanel2" aria-labelledby="menuTab2" hidden>
-          <section class="menu__group">
-            <h3>Sándwiches</h3>
-            <ul>
-              <li><strong>Catalán</strong><span>Jamón crudo, queso tybo, pulpa de tomate, hojas de rúcula y dressing de rúcula y parmesano en pan ciabatta.</span></li>
-              <li><strong>Mediterráneo</strong><span>Rúcula, tomates cherrys confitados, queso tybo, aceitunas negras y dressing de rúcula y parmesano en pan ciabatta.</span></li>
-              <li><strong>Vegetariano</strong><span>Berenjena grillada, pimientos asados, tomates cherrys confitados, cebolla morada, queso tybo, rúcula, lactonesa y dressing de rúcula y parmesano en pan ciabatta.</span></li>
-              <li><strong>Pauza</strong><span>Lomito ahumado, rúcula, pimientos salteados, queso parmesano y lactonesa en pan ciabatta.</span></li>
-              <li><strong>A lo Croque Monsieur</strong><span>Jamón cocido y queso tybo en pan de molde con salsa bechamel y queso gratinado.</span></li>
-              <li><strong>A lo Croque Madame</strong><span>Jamón cocido y queso tybo en pan de molde con salsa bechamel, queso gratinado y huevo frito.</span></li>
-            </ul>
-          </section>
-          <section class="menu__group">
-            <h3>Tostones</h3>
-            <ul>
-              <li><strong>Pan de molde</strong><span>Con mermelada o miel y queso crema o manteca.</span></li>
-              <li><strong>Pan de campo</strong><span>Con pulpa de tomate, queso parmesano y dressing de rúcula.</span></li>
-              <li><strong>Pan de campo</strong><span>Con queso crema, palta y huevo revuelto. Opción con bacon (consultar adicional).</span></li>
-              <li><strong>Avocado toast</strong><span>Tostada de pan de molde, palta pisada con tomates concasse, huevo poché, tomates cherrys y mix de semillas.</span></li>
-              <li><strong>Pan de campo con hummus</strong><span>Hummus de garbanzos, jamón crudo, brotes y dressing de rúcula y parmesano.</span></li>
-              <li><strong>Pan de campo con remolacha</strong><span>Hummus de remolacha, palta pisada con tomates y huevo frito.</span></li>
-              <li><strong>Francesa</strong><span>Con frutas de estación, granola y miel.</span></li>
-              <li><strong>Yogur con granola</strong><span>Granola casera, frutas de estación y miel.</span></li>
-              <li><strong>Omelette</strong><span>De lomito ahumado, queso tybo, tomates cherrys confitados y mix de verdes.</span></li>
-            </ul>
-          </section>
-          <section class="menu__group">
-            <h3>Combos</h3>
-            <ul>
-              <li><strong>Completo</strong><span>Infusión, tostadas de pan de campo o de molde, jamón cocido, queso tybo, huevo revuelto con semillas, queso crema y un bowl con yogur natural, miel, frutas y granola.</span></li>
-              <li><strong>Lightweight</strong><span>Infusión, tostadas de pan de molde, pulpa de tomate y oliva, y bowl con yogur natural, miel, frutas de estación y granola.</span></li>
-              <li><strong>Baby breakfast</strong><span>Infusión, panqueques de avena y banana con miel, frutos secos y frutas de estación.</span></li>
-            </ul>
-          </section>
-        </div>
-        <div class="menu__panel" role="tabpanel" id="menuPanel3" aria-labelledby="menuTab3" hidden>
-          <section class="menu__group">
-            <h3>Almuerzos</h3>
-            <ul>
-              <li><strong>Plato del día</strong><span>Consultar. Incluye entrada, principal, postre y bebida.</span></li>
-              <li><strong>Opción ensalada</strong><span>Consultar. Incluye entrada, principal, postre y bebida.</span></li>
-            </ul>
-          </section>
-          <section class="menu__group">
-            <h3>Wraps</h3>
-            <ul>
-              <li><strong>Wrap de carne</strong><span>Tortilla de trigo, carne de res braseada, cebolla morada, tomate, queso tybo, lactonesa y dip de guacamole.</span></li>
-              <li><strong>Wrap de pollo</strong><span>Tortilla de trigo, pollo, queso tybo, pimientos salteados, mostaza y lactonesa.</span></li>
-              <li><strong>Wrap veggie</strong><span>Tortilla de trigo, mix de verdes, zanahoria rallada, choclo en grano, tomates cherry confitados, palta, brotes y lactonesa.</span></li>
-            </ul>
-          </section>
-          <section class="menu__group">
-            <h3>Bebidas naturales · 500 cc</h3>
-            <ul>
-              <li><strong>Limonada</strong><span>Menta y jengibre.</span></li>
-              <li><strong>Jugo de naranja exprimido</strong></li>
-              <li><strong>Mango, naranja y papaya</strong></li>
-              <li><strong>Naranja, durazno y maracuyá</strong></li>
-              <li><strong>Mango, durazno, frutilla y naranja</strong></li>
-              <li><strong>Licuado de banana</strong></li>
-            </ul>
-          </section>
-          <section class="menu__group">
-            <h3>Otras bebidas</h3>
-            <ul>
-              <li><strong>Gaseosa lata 330 cc</strong><span>Línea Pepsi.</span></li>
-              <li><strong>Agua mineral 500 cc</strong></li>
-              <li><strong>Agua mineral con gas 500 cc</strong></li>
-              <li><strong>Cerveza</strong><span>Consultar variedad.</span></li>
-              <li><strong>Vermut</strong><span>Consultar variedad.</span></li>
+              <li><strong>Opciones para todos</strong><span>Consultá cuáles en el local o por WhatsApp.</span></li>
             </ul>
           </section>
         </div>
       </div>
       <footer class="menu__foot">
         <p>Consultá precios y disponibilidad en el local.</p>
-        <a href="https://drive.google.com/file/d/1GqUQNjpwa8dpImt_2NecfSp0wdEETO2L/view" target="_blank" rel="noopener">Ver la carta original (PDF)</a>
+        <a href="https://drive.google.com/file/d/1OBI-izb8gHnRAeVKnl4MdAE9Ng_NCwSC/view?usp=drive_link" target="_blank" rel="noopener">Ver la carta completa (PDF)</a>
       </footer>
     </div>
-  </dialog>
+  
 
   <script src="js/main.js"></script>
 </body>
